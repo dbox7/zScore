@@ -1,7 +1,22 @@
 import { LegendProps } from "recharts";
 import { DEFAULT_COLOR } from "../Utils/Constants";
+import { Payload } from "recharts/types/component/DefaultLegendContent";
 
-const CustomLegend = (props: LegendProps) => {
+interface IPayload extends Payload {
+  payload: {
+    strokeDasharray: string | number;
+    value: unknown;
+    activeDot: {
+      fill: string
+    }
+  }
+}
+
+export interface ICustomLegendProps extends LegendProps {
+  payload: IPayload[]
+}
+
+const CustomLegend = (props: ICustomLegendProps) => {
   const { payload, width } = props;
   
   return ( 
