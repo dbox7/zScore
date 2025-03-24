@@ -28,6 +28,9 @@ interface IGradientParams extends ILineParam {
   yLowerGradientLimit: number
 }
 
+/* P.S. Хотелось реализовать изящнее, обернув компонент Line в HOC, 
+  но в rechart пока не завезли обработку подобного. Должны в 3 версии добавить*/
+
 const ZScoreChart = <T extends Record<string, string | number>,>(
   { 
     data, 
